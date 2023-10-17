@@ -9,6 +9,49 @@ WIDTH = 1600  # ゲームウィンドウの幅
 HEIGHT = 900  # ゲームウィンドウの高さ
 NUM_OF_BOMBS = 5
 
+class Explosion:
+    def __init__(self):
+        exp = pg.image.load(f"ex03/fig/explosion.gif")
+        self.imgs = {
+            pg.transform.flip(exp,True, False)
+        }
+
+        pg.display.update()
+
+    def update(self):
+        pass
+
+
+def main():
+    pass
+
+
+class Score:
+    def __init__(self):
+        font1 = pg.font.SysFont("hg正楷書体pro",300)
+        color = [(0, 0, 255)]
+        self.score = 0
+        text1 = font1.render("スコア:",True,(0,0,255))
+        #self.text = self.font.render("スコア:", 0, (0,0,255))
+        screen.blit(text1,[100,50])
+        pg.display.update()
+
+    def update():
+        self.img = self.font.render("スコア:[score]", 0, (0,0,255))
+        screen.blit(self.score, [100,50])
+        pg.display.update()
+
+
+def main():
+    if beam.rct.colliderect(bomb.rct):
+        score += 1
+        update()
+    
+
+
+
+
+
 def check_bound(obj_rct: pg.Rect) -> tuple[bool, bool]:
     """
     オブジェクトが画面内or画面外を判定し，真理値タプルを返す関数
